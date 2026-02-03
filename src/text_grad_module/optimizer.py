@@ -24,7 +24,11 @@ class TextGradOptimizer:
     
     def _setup_engines(self):
         """Set up TextGrad engines."""
-        tg.set_backward_engine(self.config.backward_engine)
+        try:
+            tg.set_backward_engine(self.config.backward_engine, override=True)
+        except TypeError:
+            # If override parameter doesn't exist, try without it
+            tg.set_backward_engine(self.config.backward_engine)
         if self.config.forward_engine:
             # Note: TextGrad may not have set_forward_engine, so we handle it gracefully
             try:

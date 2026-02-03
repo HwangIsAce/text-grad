@@ -55,7 +55,7 @@ class TextGradEvaluator:
             loss_fn = self.create_loss_fn(loss_fn)
         
         # Create variable for evaluation
-        variable = tg.Variable(text, requires_grad=False)
+        variable = tg.Variable(text, requires_grad=False, role_description="text to evaluate")
         
         # Compute loss
         loss = loss_fn(variable)

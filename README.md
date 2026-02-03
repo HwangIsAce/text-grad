@@ -21,6 +21,32 @@ pip install -e .
 pip install -e ".[dev]"
 ```
 
+## API Key Setup
+
+This module requires an OpenAI API key to use TextGrad. Set it up using one of the following methods:
+
+### Option 1: Environment Variable (Recommended)
+
+```bash
+export OPENAI_API_KEY="your-api-key-here"
+```
+
+### Option 2: .env File
+
+1. Copy the example file:
+```bash
+cp .env.example .env
+```
+
+2. Edit `.env` and add your API key:
+```
+OPENAI_API_KEY=your-api-key-here
+```
+
+3. The module will automatically load the `.env` file if `python-dotenv` is installed.
+
+**Note**: Make sure `.env` is in your `.gitignore` to avoid committing your API key.
+
 ## Quick Start
 
 ### Basic Text Optimization
