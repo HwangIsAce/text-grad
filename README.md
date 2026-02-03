@@ -92,7 +92,56 @@ python examples/example_usage.py
 
 # LangGraph integration examples
 python examples/langgraph_example.py
+
+# Test prompt optimization effectiveness
+uv run python tests/test_prompt_optimization.py
 ```
+
+## Prompt Optimization Example
+
+TextGrad can significantly improve prompts by making them more specific, clear, and actionable. Here's a real example:
+
+### Before Optimization
+
+**Original Prompt:**
+```
+"Write a story."
+```
+
+This prompt is vague and doesn't provide enough context or guidance.
+
+### After Optimization
+
+**Optimized Prompt:**
+```
+"Write a story about a detective solving a mystery in a haunted house. 
+Set the story in a small coastal town and explore the theme of friendship 
+as the detective uncovers hidden secrets. Consider what if the ghosts in 
+the house are trying to communicate something important. Use this as a 
+twist in your story."
+```
+
+The optimized prompt is:
+- **More specific**: Includes setting, characters, and theme
+- **More actionable**: Provides clear direction and constraints
+- **More detailed**: Adds context and creative guidance
+
+### Running the Optimization Test
+
+To see prompt optimization in action:
+
+```bash
+# Make sure OPENAI_API_KEY is set
+export OPENAI_API_KEY="your-api-key"
+
+# Run the test
+uv run python tests/test_prompt_optimization.py
+```
+
+This will show you:
+1. Original prompt and its evaluation
+2. Optimized prompt and its evaluation
+3. Comparison showing the improvement
 
 ## Running Tests
 
